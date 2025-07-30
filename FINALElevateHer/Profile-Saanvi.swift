@@ -13,8 +13,16 @@ struct Profile_Saanvi: View {
             Text("Welcome to your Profile!")
                 .font(.title)
                 .fontWeight(.bold)
-            Image("ProfileIcon")
+            Spacer()
+            Image("Profile Icon")
                 .resizable()
+            Spacer()
+            Spacer()
+            Text("Name")
+            Text("Job")
+            Text("Years of Experience: ")
+            Text("Graduated from: ")
+            
         }
         .padding()
     }
