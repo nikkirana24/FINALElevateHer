@@ -10,7 +10,7 @@ import SwiftUI
 struct Profile_Saanvi: View {
     var body: some View {
         ZStack{
-            Color(.systemPink)
+            Color(hex:0xF49CBB)
                 .ignoresSafeArea()
             VStack{
                 Text("Welcome to your Profile!")
