@@ -13,6 +13,8 @@ struct Profile_Saanvi: View {
             Text("Welcome to your Profile!")
                 .font(.title)
                 .fontWeight(.bold)
+            Image("ProfileIcon")
+                .resizable()
         }
         .padding()
     }
