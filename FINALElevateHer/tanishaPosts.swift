@@ -27,6 +27,7 @@ class PostViewModel: ObservableObject {
         if let index = posts.firstIndex(where: { $0.id == post.id }) {
             posts[index].comments.append(Comment(text: text))
         }
+            
     }
 }
 
