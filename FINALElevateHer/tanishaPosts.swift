@@ -32,7 +32,7 @@ class PostViewModel: ObservableObject {
 
 // MARK: - Main View
 
-struct ContentView: View {
+struct tanishaPosts: View {
     @StateObject private var viewModel = PostViewModel()
     @State private var newPostText = ""
 
