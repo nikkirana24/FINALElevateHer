@@ -62,6 +62,70 @@ struct SupportGroups: View {
                         .cornerRadius(10)
                 })
                 
+                Link(destination: URL(string:"https://www.wearebgc.org/")!, label: {
+                    Label("Black Girls Code", systemImage: "desktopcomputer")
+                        .frame(width: 350, height: 40, alignment: .center)
+                        .background(Color(hex: 0x372554))
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                })
+                
+                Link(destination: URL(string:"https://girldevelopit.com/")!, label: {
+                    Label("Girl Develop It", systemImage: "laptopcomputer")
+                        .frame(width: 350, height: 40, alignment: .center)
+                        .background(Color(hex: 0x372554))
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                })
+                
+                Link(destination: URL(string:"https://anitab.org/")!, label: {
+                    Label("Anita Borg Institute", systemImage: "desktopcomputer")
+                        .frame(width: 350, height: 40, alignment: .center)
+                        .background(Color(hex: 0x372554))
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                })
+                
+                Link(destination: URL(string:"https://womenwhocode.com/")!, label: {
+                    Label("Women Who Code", systemImage: "laptopcomputer")
+                        .frame(width: 350, height: 40, alignment: .center)
+                        .background(Color(hex: 0x372554))
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                })
+            
+                Link(destination: URL(string:"https://ncwit.org/")!, label: {
+                    Label("National Center For Women & Information Technology", systemImage: "desktopcomputer")
+                        .frame(width: 350, height: 40, alignment: .center)
+                        .background(Color(hex: 0x372554))
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                })
+                
+                Link(destination: URL(string:"https://www.hiretechladies.com/")!, label: {
+                    Label("Tech Ladies Inc.", systemImage: "laptopcomputer")
+                        .frame(width: 350, height: 40, alignment: .center)
+                        .background(Color(hex: 0x372554))
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                })
+                
+                Link(destination: URL(string:"https://www.techwomen.org/")!, label: {
+                    Label("TechWomen", systemImage: "desktopcomputer")
+                        .frame(width: 350, height: 40, alignment: .center)
+                        .background(Color(hex: 0x372554))
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                })
+                
+                Link(destination: URL(string:"https://adadevelopersacademy.org/")!, label: {
+                    Label("Ada Developers Academy", systemImage: "laptopcomputer")
+                        .frame(width: 350, height: 40, alignment: .center)
+                        .background(Color(hex: 0x372554))
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                })
+                
                 Spacer()
             }
         }
