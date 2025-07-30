@@ -13,8 +13,11 @@ struct Profile_Saanvi: View {
             Text("Welcome to your Profile!")
                 .font(.title)
                 .fontWeight(.bold)
-            Image("ProfileIcon")
+            Image("Profile Icon")
                 .resizable()
+            HStack{
+                Text("Name")
+            }
         }
         .padding()
     }
