@@ -2,12 +2,12 @@ import SwiftUI
 
 // MARK: - Models
 
-struct Comment: Identifiable {
+struct Comment: Identifiable, Hashable {
     let id = UUID()
     let text: String
 }
 
-struct Post: Identifiable {
+struct Post: Identifiable, Hashable {
     let id = UUID()
     var content: String
     var comments: [Comment] = []
@@ -30,14 +30,16 @@ class PostViewModel: ObservableObject {
     }
 }
 
-// MARK: - Main View
+// MARK: - View
 
 struct tanishaPosts: View {
     @StateObject private var viewModel = PostViewModel()
     @State private var newPostText = ""
 
+    @State private var path = NavigationPath()
+
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $path) {
             VStack {
                 HStack {
                     TextField("Write a post...", text: $newPostText)
@@ -52,26 +54,34 @@ struct tanishaPosts: View {
                 }
                 .padding()
 
-                List {
-                    ForEach(viewModel.posts) { post in
-                        NavigationLink(destination: CommentsView(post: post, viewModel: viewModel)) {
-                            VStack(alignment: .leading) {
-                                Text(post.content)
-                                    .font(.headline)
-                                Text("\(post.comments.count) comment(s)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray)
-                            }
+                List(viewModel.posts) { post in
+                    NavigationLink(value: post) {
+                        VStack(alignment: .leading) {
+                            Text(post.content)
+                                .font(.headline)
+                            Text("\(post.comments.count) comment(s)")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
                         }
                     }
                 }
+
+                Button("Go to First Post's Comments") {
+                    if let firstPost = viewModel.posts.first {
+                        path.append(firstPost)
+                    }
+                }
+                .padding()
             }
             .navigationTitle("Posts")
+            .navigationDestination(for: Post.self) { post in
+                CommentsView(post: post, viewModel: viewModel)
+            }
         }
     }
 }
 
-// MARK: - Comments View
+// MARK: - CommentsView for completeness
 
 struct CommentsView: View {
     let post: Post
@@ -106,5 +116,5 @@ struct CommentsView: View {
 // MARK: - Preview
 
 #Preview {
-    ContentView()
+    tanishaPosts()
 }
