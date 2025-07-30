@@ -9,23 +9,29 @@ import SwiftUI
 
 struct Profile_Saanvi: View {
     var body: some View {
-        ZStack{
-            Color(hex:0xF49CBB)
-                .ignoresSafeArea()
-            VStack{
-                Text("Welcome to your Profile!")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
-                Image("Profile Icon")
-                    .resizable()
-                Spacer()
-                Spacer()
-                Text("Name")
-                Text("Job")
-                Text("Years of Experience: ")
-                Text("Graduated from: ")
-                
+        NavigationStack{
+            ZStack{
+                Color(hex:0xF49CBB)
+                    .ignoresSafeArea()
+                VStack{
+                    NavigationLink(destination: ContentView()){
+                        Text("Back")
+                    }
+                    Text("Welcome to your Profile!")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Spacer()
+                    Image("Profile Icon")
+                        .resizable()
+                    Spacer()
+                    Spacer()
+                    Text("Name")
+                    Text("Job")
+                    Text("Years of Experience: ")
+                    Text("Graduated from: ")
+                    
+                }
+                .padding()
             }
             .padding()
         }
