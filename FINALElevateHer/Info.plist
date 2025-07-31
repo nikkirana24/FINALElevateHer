@@ -4,8 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>PlayfairDisplay-VariableFont_wght.ttf</string>
 		<string>Lato-Regular.ttf</string>
+		<string>Baskerville.ttf</string>
+		<string>Bitcount-Regular.ttf</string>
 	</array>
 </dict>
 </plist>
