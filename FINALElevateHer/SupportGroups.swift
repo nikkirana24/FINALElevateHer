@@ -140,11 +140,6 @@ struct SupportGroups: View {
                         .font(.custom("Bitcount-Regular", size: 20))
                 })
                 Spacer()
-                NavigationLink(destination: ContentView()){
-                    Text("Go back to the home page")
-                        .foregroundColor(.white)
-                        .font(.custom("Bitcount-Regular", size: 15))
-                }
             }
         }
     }
