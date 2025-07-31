@@ -108,6 +108,9 @@ struct ContentView: View {
     ContentView()
 }
 
+
+
+
 // USE THIS TO MAKE HEXCODE FOR OUR PROGRAM!!
 // i got this code from this website: https://medium.com/@jakir/use-hex-color-in-swiftui-c19e6ab79220
 extension Color { // we make a new extension called color, which makes a new functionality to the name "Color"

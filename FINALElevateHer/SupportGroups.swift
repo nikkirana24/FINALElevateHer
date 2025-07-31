@@ -17,11 +17,11 @@ struct SupportGroups: View {
             
             VStack {
                 
-                Text("Support Groups Available for Women in Technology")
-                    .font(.title)
+                Text("Support Groups Available")
+                    .font(.custom("Bitcount-Regular", size: 30))
                     .foregroundColor(.white)
-                    .fontWeight(.semibold)
-                    .padding(20)
+                    .multilineTextAlignment(.center)
+                    .padding(10)
                 
                 Link(destination: URL(string:"https://women-in-tech.org/")!, label: {
                     Label("Women in Tech", systemImage: "laptopcomputer")
@@ -29,6 +29,7 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
                 
                 Link(destination: URL(string:"https://sherunsit.org/")!, label: {
@@ -37,6 +38,7 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
                 
                 Link(destination: URL(string:"https://www.yahoo.com/builtbygirls/")!, label: {
@@ -45,6 +47,7 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
                 
                 Link(destination: URL(string:"https://girlswhocode.com/")!, label: {
@@ -53,6 +56,7 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
                 
                 Link(destination: URL(string:"https://www.kodewithklossy.com/")!, label: {
@@ -61,6 +65,7 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
                 
                 Link(destination: URL(string:"https://www.wearebgc.org/")!, label: {
@@ -69,6 +74,7 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
                 
                 Link(destination: URL(string:"https://girldevelopit.com/")!, label: {
@@ -77,6 +83,7 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
                 
                 Link(destination: URL(string:"https://anitab.org/")!, label: {
@@ -85,6 +92,7 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
                 
                 Link(destination: URL(string:"https://womenwhocode.com/")!, label: {
@@ -93,6 +101,7 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
             
                 Link(destination: URL(string:"https://ncwit.org/")!, label: {
@@ -101,6 +110,7 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
                 
                 Link(destination: URL(string:"https://www.hiretechladies.com/")!, label: {
@@ -109,6 +119,7 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
                 
                 Link(destination: URL(string:"https://www.techwomen.org/")!, label: {
@@ -117,6 +128,7 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
                 
                 Link(destination: URL(string:"https://adadevelopersacademy.org/")!, label: {
@@ -125,9 +137,14 @@ struct SupportGroups: View {
                         .background(Color(hex: 0x880D1E))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.custom("Bitcount-Regular", size: 20))
                 })
-                
                 Spacer()
+                NavigationLink(destination: ContentView()){
+                    Text("Go back to the home page")
+                        .foregroundColor(.white)
+                        .font(.custom("Bitcount-Regular", size: 15))
+                }
             }
         }
     }
