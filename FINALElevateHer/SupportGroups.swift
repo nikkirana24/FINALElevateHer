@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SupportGroups: View {
     var body: some View {
