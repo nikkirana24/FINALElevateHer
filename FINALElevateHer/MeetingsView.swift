@@ -15,41 +15,49 @@ struct MeetingsView: View {
     @State private var newDate = Date.now
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(meetings) { Meeting in
-                    HStack {
+        
+        ZStack {
+            NavigationStack {
+                List {
+                    ForEach(meetings) { Meeting in
                         HStack {
-                            Text(Meeting.name)
-                            Spacer()
-                            Text(Meeting.dateOf, format:
-                                    .dateTime.month(.wide).day().year())
+                            HStack {
+                                Text(Meeting.name)
+                                Spacer()
+                                Text(Meeting.dateOf, format:
+                                        .dateTime.month(.wide).day().year())
+                                .font(.custom("Lato-Regular", size: 15))
+                            }
                         }
                     }
+                    .onDelete(perform: deleteMeeting)
                 }
-                .onDelete(perform: deleteMeeting)
-            }
-            .navigationTitle("Meetings")
-            .safeAreaInset(edge: .bottom) {
-                VStack(alignment: .center, spacing: 20) {
-                    Text("Schedule New Meetings")
-                        .font(.headline)
-                    DatePicker(selection: $newDate, in: Date.distantPast...Date.now,
-                               displayedComponents: .date) {
-                        TextField("Input Details for the Meeting", text: $newName)
-                            .textFieldStyle(.roundedBorder)
+                .navigationTitle("Meetings")
+                .safeAreaInset(edge: .bottom) {
+                    VStack(alignment: .center, spacing: 20) {
+                        
+                        Text("Schedule New Meetings")
+                            .font(.custom("Lato-Regular", size: 20))
+                            .padding(20.0)
+                        DatePicker(selection: $newDate, in: Date.distantPast...Date.now,
+                                   displayedComponents: .date) {
+                            TextField("Input Details for the Meeting", text: $newName)
+                                .textFieldStyle(.roundedBorder)
+                                .font(.custom("Lato-Regular", size: 15))
+                        }
                     }
+                    Button("Save") {
+                        let newFriend = Meeting(name: newName, dateOf: newDate)
+                        context.insert(newFriend)
+                        newName = ""
+                        newDate = .now
+                    }
+                    .padding()
+                    .bold()
+                    .font(.custom("Lato-Regular", size: 18))
                 }
-                Button("Save") {
-                    let newFriend = Meeting(name: newName, dateOf: newDate)
-                    context.insert(newFriend)
-                    newName = ""
-                    newDate = .now
-                }
-                .bold()
+                .background(.bar)
             }
-            .padding()
-            .background(.bar)
         }
     }
     func deleteMeeting(at offsets: IndexSet) {
