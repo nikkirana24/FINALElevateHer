@@ -19,10 +19,10 @@ struct SupportGroups: View {
             VStack {
                 
                 Text("Support Groups Available")
-                    .font(.custom("Bitcount-Regular", size: 30))
-                    .foregroundColor(.white)
+                    .font(.custom("Bitcount-Regular", size: 25))
+                    .foregroundColor(Color(hex:0x880D1E))
                     .multilineTextAlignment(.center)
-                    .padding(10)
+                    .padding(.vertical, 35)
                 
                 Link(destination: URL(string:"https://women-in-tech.org/")!, label: {
                     Label("Women in Tech", systemImage: "laptopcomputer")

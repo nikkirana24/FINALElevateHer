@@ -1,106 +1,47 @@
-//  ContentView.swift
-//  ElevateHer
+//
+//  Welcome.swift
+//  FINALElevateHer
+//
+//  Created by Nikki  on 7/31/25.
 //
 
 import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @State private var username = "user"
-    
     var body: some View {
         NavigationStack {
-            VStack(spacing: 30) {
-                
-                // Header
-                HStack {
-                    Text("Welcome \(username)!")
-                        .font(.headline)
+            ZStack {
+                Color(hex: 0xF49CBB)
+                    .ignoresSafeArea()
+                VStack {
+                    Text("Welcome to")
+                        .font(.custom("Bitcount-Regular", size: 40))
                         .foregroundColor(.white)
-                        .padding([.leading, .bottom, .trailing])
-                        .padding(.vertical, 8)
-                        .background(Color.black)
-                        .cornerRadius(10)
+                        .multilineTextAlignment(.center)
+                    Text("ElevateHER")
+                        .font(.custom("Bitcount-Regular", size: 55))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                    Text("This app is geared towards girls and women alike, uniting them with the sole purpose of advancing their technological careers in a male dominated workplace.")
+                        .font(.custom("Lato-Regular", size: 20))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .padding([.leading, .bottom, .trailing], 35.0)
                     
-                    Spacer()
-                    
-                    // Profile Icon
-                    Button(action: {
-                        // Navigate to Profile Page
-                    }) {
-                        Image(systemName: "person.crop.circle.fill")
-                            .resizable()
-                            .frame(width: 35, height: 35)
-                            .foregroundColor(.white)
-                    }
-                }
-                .padding(.horizontal)
-                
-                // Connections, Post/Comment, Support Group buttons - HORIZONTAL
-                HStack(spacing: 20) {
-                    // Connections
-                    Button(action: {
-                        // Navigate to Connections
-                    }) {
+                    NavigationLink(destination: HomePage()) {
                         VStack {
                             Image(systemName: "person.3.fill")
-                            Text("Connections")
-                                .font(.caption)
+                            Text("Click to go to the home page.")
+                                .font(.custom("Lato-Regular", size:20))
                         }
                         .foregroundColor(.white)
                         .padding()
-                        .background(Color.purple)
-                        .cornerRadius(10)
-                    }
-                    
-                    // Post/Comment
-                    Button(action: {
-                        // Navigate to Post/Comment
-                    }) {
-                        VStack {
-                            Image(systemName: "envelope.fill")
-                            Text("Post/Comment")
-                                .font(.caption)
-                        }
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.red)
-                        .cornerRadius(10)
-                    }
-                    
-                    // Support Groups
-                    Button(action: {
-                        // Navigate to Support Groups
-                    }) {
-                        VStack {
-                            Image(systemName: "person.2.fill")
-                            Text("Support Groups")
-                                .font(.caption)
-                        }
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.indigo)
+                        .background(Color(hex:0xF26A8D))
                         .cornerRadius(10)
                     }
                 }
-                .padding(.horizontal)
-                
-                // Latest Posts/Updates Section
-                RoundedRectangle(cornerRadius: 15)
-                    .fill(Color.blue.opacity(0.6))
-                    .frame(height: 500)
-                    .overlay(
-                        Text("Latest Posts/Updates!")
-                            .foregroundColor(.black)
-                            .font(.title3)
-                    )
-                    .padding(.horizontal)
-                
-                Spacer()
             }
-            .padding(.top)
-            .background(Color(red: 38/255, green: 0/255, blue: 77/255)) // dark purple
-            .ignoresSafeArea()
         }
     }
 }
@@ -108,9 +49,6 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
-
-
-
 
 // USE THIS TO MAKE HEXCODE FOR OUR PROGRAM!!
 // i got this code from this website: https://medium.com/@jakir/use-hex-color-in-swiftui-c19e6ab79220
@@ -125,3 +63,4 @@ extension Color { // we make a new extension called color, which makes a new fun
         )
     }
 }
+

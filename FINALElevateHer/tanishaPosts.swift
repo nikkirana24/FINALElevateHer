@@ -41,9 +41,13 @@ struct tanishaPosts: View {
     @State private var path = NavigationPath()
 
     var body: some View {
+        
         NavigationStack(path: $path) {
+            
             VStack {
+                
                 HStack {
+                    
                     TextField("Write a post...", text: $newPostText)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
 
